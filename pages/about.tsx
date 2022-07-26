@@ -28,7 +28,7 @@ export default function AboutPage(props: AboutPageProps) {
 			{
 				pathname: '/about',
 				query: {
-					page: (Number(router.query?.page) || 1) + 1,
+					page: (Number(page) || 1) + 1,
 				},
 			},
 			undefined,
