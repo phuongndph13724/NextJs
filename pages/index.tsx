@@ -5,7 +5,10 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-const Home: NextPage = () => {
+import { MainLayout } from '@/components/layout';
+import { NextPageWithLayout } from '../models';
+
+const Home: NextPageWithLayout = () => {
 	const router = useRouter();
 	function nextDetailPage() {
 		router.push({
@@ -56,5 +59,5 @@ const Home: NextPage = () => {
 		</div>
 	);
 };
-
+Home.Layout = MainLayout;
 export default Home;

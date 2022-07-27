@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { resolve } from 'path';
 import * as React from 'react';
 
 export interface ParamsPostPageProps {}
@@ -11,4 +12,10 @@ export default function ParamsPostPage(props: ParamsPostPageProps) {
 			<p>Query : {JSON.stringify(router.query)}</p>
 		</div>
 	);
+}
+export async function getServerSideProps() {
+	await new Promise((resolve) => setTimeout(resolve, 3000));
+	return {
+		props: {},
+	};
 }
